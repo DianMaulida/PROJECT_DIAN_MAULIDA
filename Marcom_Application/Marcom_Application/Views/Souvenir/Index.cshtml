@@ -1,0 +1,213 @@
+﻿@model PagedList.IPagedList<Marcom_Application.ViewModel.VMSouvenir>
+@using PagedList.Mvc;
+@{
+    ViewBag.Title = "Index";
+    int no = 1;
+}
+<br />
+<div class="row col-lg-12" style="width:93%">
+    <div class="alert alert-info cls_alert"></div>
+</div>
+<div class="panel panel-primary" style="width:90%">
+    <div class="panel-heading">List Master Souvenir</div>
+    <div class="panel-body">
+        <ol class="breadcrumb">
+            <li>@Html.ActionLink("Home", "Index", "Home")</li>
+            <li>@Html.ActionLink("Master", "Index", "Souvenir")</li>
+            <li class="active">List Souvenir</li>
+        </ol>
+        <button class="btn btn-primary cls_add" id="btn_add" style="margin-left:87%">Add</button>
+@using (Html.BeginForm("Index", "Souvenir", FormMethod.Get, new { @id = "form_create" }))
+{
+    <br />
+        <div class="row" style="margin-left:0%">
+            <div class="col-sm-2" style="padding-right:1px;padding-left:5px;">
+                @Html.TextBox("searchCode", ViewBag.CurrentFilter1 as string, new { @class = "form-control", @style = "width:100%;", @placeholder = "Souvenir Code"})
+            </div>
+            <div class="col-md-2" style="padding-right:1px;padding-left:5px;">
+                @Html.TextBox("searchName", ViewBag.CurrentFilter2 as string, new { @class = "form-control", @style = "width:100%;", @placeholder = "Souvenir Name" })
+            </div>
+            <div class="col-md-2" style="padding-right:1px;padding-left:5px;">
+                @Html.DropDownList("searchUnitCode", (SelectList)ViewBag.UnitCode, "- Select Unit Name -", new { @class = "form-control" })
+            </div>
+            <div class="col-md-2" style="padding-right:1px;padding-left:5px;">
+                @Html.TextBox("searchDate", ViewBag.CurrentFilter3 as string, new { @class = "form-control", @style = "width:100%;", @placeholder = "Created Date", @type = "date" })
+            </div>
+            <div class="col-sm-2" style="padding-right:0px;padding-left:5px;">
+                @Html.TextBox("searchCreatedby", ViewBag.CurrentFilter4 as string, new { @class = "form-control", @style = "width:100%;", @placeholder = "Created By" })
+            </div>
+            <div class="col-md-2" style="padding-left:5px">
+                <button class=" btn btn-warning cls_search" id="btn_search">Search</button>
+            </div>
+        </div>
+}
+
+        <hr />
+        <table class="table table-striped">
+            <tbody>
+                <tr>
+                    <th>No</th>
+                    <th>Souvenir Code</th>
+                    <th>Souvenir Name</th>
+                    <th>Unit</th>
+                    <th>Created Date</th>
+                    <th>Created By</th>
+                    <th>Action</th>
+                </tr>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@no</td>
+                        <td>@item.codesouvenir</td>
+                        <td>@item.namesouvenir</td>
+                        <td>@item.name</td>
+                        <td>@item.created_date.ToString("dd/MM/yyyy")</td>
+                        <td>@item.created_by</td>
+
+                        <td>
+                            <span class="glyphicon glyphicon-search cls_view" id_souvenir="@item.id" data_name="@item.name" data_code="@item.codesouvenir"></span>
+                            <span class="glyphicon glyphicon-pencil cls_edit" id_souvenir="@item.id" data_name="@item.name" data_code="@item.codesouvenir"></span>
+                            <span class="glyphicon glyphicon-trash cls_delete" id_souvenir="@item.id"></span>
+                        </td>
+                    </tr>
+                    no++;
+                }
+            </tbody>
+        </table>
+        <div style="text-align: center; font-size: large; color: #007bff">@ViewBag.DataKosong</div>
+        <!--untuk pagination-->
+        @*<p style="float:right">
+           Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+        </p>*@
+        <div class="row" style="float:right;padding-right:1em;">
+            @Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document" style="width:80%;padding-bottom:10%;" id="modal_dialog_id">
+        <div class="modal-content">
+            <div class="modal-header" id="modal_header_id">
+                <h5 class="modal-title" id="exampleModalLabel">  </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+
+            </div>
+            <div class="modal-body" id="modal_body_id"></div>
+            <div class="modal-footer" id="modal_footer_id" style="display:none;">
+                    <button type="button" id="id_btn_delete" class="btn btn-primary">Delete</button>
+                    <button type="button" class="btn  btn-warning cls_cancel" data-dismiss="modal">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(".cls_alert").hide();
+    $(".cls_add").click(function () {
+        debugger;
+        $.ajax({
+            url: "@Url.Action("Create","Souvenir")",
+            method: "get",
+            success: function (respon) {
+                debugger;
+                $("#modal_body_id").empty();
+                $("#exampleModalLabel").empty();
+                $("#exampleModalLabel").append("Add Souvenir");
+                $("#modal_dialog_id").css({ 'width': '70%' });
+                $("#modal_header_id").css({ 'background-color': '#428bca', 'color': 'white' });
+                $("#modal_body_id").css({ 'padding-bottom': '0%' });
+                $("#modal_body_id").append(respon);
+                $("#exampleModal").modal("show");
+                $("#modal_footer_id").hide();
+            }
+        })
+    });
+    $(".cls_edit").click(function () {
+        debugger;
+        var id = $(this).attr("id_souvenir");
+        var data_name = $(this).attr("data_name");
+        var data_code = $(this).attr("data_code");
+        $.ajax({
+            url: "@Url.Action("Edit","Souvenir")",
+            method: "get",
+            data: { id: id },
+            success: function (respon) {
+                $("#modal_body_id").empty();
+                $("#exampleModalLabel").empty();
+                $("#exampleModalLabel").append("Update Souvenir - " + data_name + " (" + data_code + ")");
+                $("#modal_dialog_id").css({ 'width': '70%' });
+                $("#modal_header_id").css({ 'background-color': '#428bca', 'color': 'white' });
+                $("#modal_body_id").css({ 'padding-bottom': '0%' });
+                $("#modal_body_id").append(respon);
+                $("#exampleModal").modal("show");
+                $("#modal_footer_id").hide();
+            }
+        });
+    });
+    $(".cls_view").click(function () {
+        debugger;
+        var id = $(this).attr("id_souvenir");
+        var data_name = $(this).attr("data_name");
+        var data_code = $(this).attr("data_code");
+
+        $.ajax({
+            url: "@Url.Action("View","Souvenir")",
+            method: "get",
+            //dataType: "json",
+            data: { id: id },
+            success: function (respon) {
+                data = respon;
+                $("#modal_body_id").empty();
+                $("#exampleModalLabel").empty();
+                $("#modal_dialog_id").css({ 'width': '70%' });
+                $("#modal_header_id").css({ 'background-color': '#428bca', 'color': 'white' });
+                $("#exampleModalLabel").append("View Souvenir - " + data_name + " (" + data_code + ")");
+                $("#modal_body_id").append(respon);
+                $("#exampleModal").modal("show");
+                $("#modal_footer_id").hide();
+            }
+        });
+    });
+    $(".cls_delete").click(function () {
+        debugger;
+        var id = $(this).attr("id_souvenir");
+        $("#modal_body_id").empty();
+        $("#exampleModalLabel").empty();
+        $("#modal_body_id").empty();
+        $("#modal_dialog_id").css({ 'width': '16%' });
+        $("#modal_body_id").css({ 'padding-bottom': '0%', 'margin-left': '15%' });
+        $("#modal_footer_id").show();
+        $("#modal_header_id").hide();
+        $("#modal_body_id").append("Delete Souvenir ?");
+        $("#exampleModal").modal("show");
+        $("#id_btn_delete").click(function () {
+            debugger;
+            $.ajax({
+                url: "@Url.Action("Delete", "Souvenir")",
+                method: "get",
+                data: { id: id },
+                success: function (respon) {
+                    if (respon.respon) {
+                        $("#exampleModal").modal("hide");
+                        $(".cls_alert").show().html("<strong>Data Deleted!</strong> Data Souvenir with code " + "<strong>" + respon.respon + "</strong>" + " has been deleted!");
+                        window.setTimeout(function () {
+                            $(".cls_alert").slideUp(500);
+                            window.location.reload();
+                        }, 3000);
+                    }
+                    else {
+                        alert(respon.respon);
+                    }
+                }
+            })
+        })
+    });
+    $(".cls_cancel").click(function () {
+        window.location.reload();
+        $("#exampleModal").modal("hide");
+       
+    });
+</script>

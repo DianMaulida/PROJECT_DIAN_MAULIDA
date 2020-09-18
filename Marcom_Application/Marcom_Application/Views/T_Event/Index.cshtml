@@ -1,0 +1,241 @@
+﻿@model PagedList.IPagedList<Marcom_Application.Model.transaksi_event>
+@using PagedList.Mvc;
+
+@{
+    ViewBag.Title = "Index";
+    int no = 1;
+}
+<br />
+<div class="row col-lg-12" style="width:93%">
+    <div class="alert alert-info cls_alert"></div>
+</div>
+<div class="panel panel-primary" style="width:90%">
+    <div class="panel-heading">List Event Request</div>
+    <div class="panel-body">
+        <ol class="breadcrumb">
+            <li>@Html.ActionLink("Home", "Index", "Home")</li>
+            <li>@Html.ActionLink("Transaksi", "Index", "T_Event")</li>
+            <li class="active">List Event</li>
+        </ol>
+        <div class="col-lg-12" style="padding-left:5px;margin-left:93%;">
+            <button class="btn btn-primary cls_add" id="btn_add">Add</button>
+        </div>
+        @using (Html.BeginForm("Index", "T_Event", FormMethod.Get, new { @id = "form_create" }))
+        {
+            <br />
+            <div class="row" style="margin-left:0%">
+                <div class="col-sm-2" style="padding-right:0px;padding-left:0px; ">
+                    @Html.TextBox("searchCode", ViewBag.CurrentFilter1 as string, new { @class = "form-control", @style = "width:100%;", @placeholder = "Transaction Code" })
+                </div>
+                <div class="col-sm-2" style="padding-right:1px;padding-left:5px;width:14%;">
+                    @Html.TextBox("searchRequestBy", ViewBag.CurrentFilter2 as string, new { @class = "form-control", @style = "width:100%;", @placeholder = "Request By" })
+                </div>
+                <div class="col-sm-2" style="padding-right:1px;padding-left:5px;">
+                    @Html.TextBox("searchRequestDate", ViewBag.CurrentFilter3 as string, new { @class = "form-control", @style = "width:100%;", @placeholder = "Request Date", @type = "date" })
+                </div>
+                <div class="col-sm-1" style="padding-right:1px;padding-left:5px;width:12%;">
+                    @*<input class="form-control" placeholder="Status"/>*@
+                    @Html.TextBox("status", ViewBag.CurrentFilter4 as int?, new { @class = "form-control", @style = "width:100%;", @placeholder = "Status" })
+                </div>
+                <div class="col-sm-2" style="padding-right:1px;padding-left:5px;">
+                    @Html.TextBox("searchCreatedDate", ViewBag.CurrentFilter5 as string, new { @class = "form-control", @style = "width:100%;", @placeholder = "Created Date", @type = "date" })
+                </div>
+                <div class="col-sm-2" style="padding-right:5px;padding-left:5px;width:14%;">
+                    @Html.TextBox("searchCreatedby", ViewBag.CurrentFilter6 as string, new { @class = "form-control", @style = "width:100%;", @placeholder = "Created By" })
+                </div>
+                <div class="col-sm-1" style="padding-right:5px;padding-left:5px;">
+                    <input type="submit" class="btn btn-warning cls_search" id="btn_search" value="Search" />
+                </div>
+            </div>
+        }
+        <hr />
+        <table class="table table-striped">
+            <tbody>
+                <tr>
+                    <th>No</th>
+                    <th>Transaction Code</th>
+                    <th>Request By</th>
+                    <th>Request Date</th>
+                    <th>Status</th>
+                    <th>Created Date</th>
+                    <th>Created By</th>
+                    <th>Action</th>
+                </tr>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@no</td>
+                        <td>@item.code</td>
+                        <td>@item.request_by</td>
+                        <td>@item.request_date.ToString("dd/MM/yyyy")</td>
+                        @if (@item.status == 1)
+                        {
+                            <td>Submitted</td>
+                        }
+                        else if (@item.status == 2)
+                        {
+                            <td>In Progress</td>
+                        }
+                        else if (@item.status == 3)
+                        {
+                            <td>Done</td>
+                        }
+                        else
+                        {
+                            <td>Rejected</td>
+                        }
+                        <td>@item.created_date.Value.ToString("dd/MM/yyyy")</td>
+                        <td>@item.created_by</td>
+                        <td>
+                            <span class="glyphicon glyphicon-search cls_approval" id_event="@item.id" data_name="@item.event_name" data_code="@item.code"></span>
+                            <span class="glyphicon glyphicon-pencil cls_edit" id_event="@item.id" data_name="@item.event_name" data_code="@item.code"></span>
+                            <span class="glyphicon glyphicon-pencil cls_view" id_event="@item.id" data_name="@item.event_name" data_code="@item.code"></span>
+                            <span class="glyphicon glyphicon-ok cls_close" id_event="@item.id" data_name="@item.event_name" data_code="@item.code"></span>
+                        </td>
+                    </tr>
+                    no++;
+                }
+            </tbody>
+        </table>
+        <div style="text-align: center; font-size: large; color: #007bff">@ViewBag.DataKosong</div>
+
+        <!--untuk pagination-->
+        @*<p style="float:right">
+               Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+            </p>*@
+        <div class="row" style="float:right;padding-right:1em;">
+            @Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document" style="width:100%;padding-bottom:10%;" id="modal_dialog_id">
+        <div class="modal-content">
+            <div class="modal-header" id="modal_header_id">
+                <h5 class="modal-title" id="exampleModalLabel">  </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body" id="modal_body_id"></div>
+            <div class="modal-footer" id="modal_footer_id" style="display:none;">
+                <button type="submit" id="id_btn_yes" class="btn btn-primary cls_btn_yes">Yes</button>
+                <button type="button" class="btn  btn-warning cls_cancel" data-dismiss="modal">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(".cls_alert").hide();
+    $(".cls_add").click(function () {
+        debugger;
+        $.ajax({
+            url: "@Url.Action("Create","T_Event")",
+            method: "get",
+            success: function (respon) {
+                debugger;
+                $("#modal_body_id").empty();
+                $("#exampleModalLabel").empty();
+                $("#exampleModalLabel").append("Add Event Request");
+                $("#modal_dialog_id").css({ 'width': '80%' });
+                $("#modal_header_id").css({ 'background-color': '#428bca', 'color': 'white' });
+                $("#modal_body_id").css({ 'padding-bottom': '0%' });
+                $("#modal_body_id").append(respon);
+                $("#exampleModal").modal("show");
+                $("#modal_footer_id").hide();
+            }
+        })
+    });
+    $(".cls_view").click(function () {
+        debugger;
+        var id = $(this).attr("id_event");
+        var data_name = $(this).attr("data_name");
+        var data_code = $(this).attr("data_code");
+
+        $.ajax({
+            url: "@Url.Action("View","T_Event")",
+            method: "get",
+            //dataType: "json",
+            data: { id: id },
+            success: function (respon) {
+                //data = respon;
+                $("#modal_body_id").empty();
+                $("#exampleModalLabel").empty();
+                $("#modal_dialog_id").css({ 'width': '80%' });
+                $("#modal_header_id").css({ 'background-color': '#428bca', 'color': 'white' });
+                $("#exampleModalLabel").append(" View Event Request - " + data_code + " ");
+                $("#modal_body_id").append(respon);
+                $("#exampleModal").modal("show");
+                $("#modal_footer_id").hide();
+            }
+        });
+    });
+    $(".cls_edit").click(function () {
+        debugger;
+        var id = $(this).attr("id_event");
+        var data_name = $(this).attr("data_name");
+        var data_code = $(this).attr("data_code");
+        $.ajax({
+            url: "@Url.Action("Edit","T_Event")",
+            method: "get",
+            data: { id: id },
+            success: function (respon) {
+                $("#modal_body_id").empty();
+                $("#exampleModalLabel").empty();
+                $("#exampleModalLabel").append().html("Edit Event Request - " + data_code + " ");
+                $("#modal_dialog_id").css({ 'width': '80%' });
+                $("#modal_header_id").css({ 'background-color': '#428bca', 'color': 'white' });
+                $("#modal_body_id").css({ 'padding-bottom': '0%' });
+                $("#modal_body_id").append(respon);
+                $("#exampleModal").modal("show");
+                $("#modal_footer_id").hide();
+            }
+        });
+    });
+    $(".cls_approval").click(function () {
+        debugger;
+        var id = $(this).attr("id_event");
+        var data_name = $(this).attr("data_name");
+        var data_code = $(this).attr("data_code");
+        $.ajax({
+            url: "@Url.Action("Approval","T_Event")",
+            method: "get",
+            data: { id: id },
+            success: function (respon) {
+                $("#modal_body_id").empty();
+                $("#exampleModalLabel").empty();
+                $("#exampleModalLabel").append().html("Approval Event Request - " + data_code + " ");
+                $("#modal_dialog_id").css({ 'width': '80%' });
+                $("#modal_header_id").css({ 'background-color': '#428bca', 'color': 'white' });
+                $("#modal_body_id").css({ 'padding-bottom': '0%' });
+                $("#modal_body_id").append(respon);
+                $("#exampleModal").modal("show");
+                $("#modal_footer_id").hide();
+            }
+        });
+    });
+    $(".cls_close").click(function () {
+        debugger;
+        var id = $(this).attr("id_event");
+        var data_name = $(this).attr("data_name");
+        var data_code = $(this).attr("data_code");
+        $.ajax({
+            url: "@Url.Action("CloseRequest","T_Event")",
+            method: "get",
+            data: { id: id },
+            success: function (respon) {
+                $("#modal_body_id").empty();
+                $("#exampleModalLabel").empty();
+                $("#exampleModalLabel").append().html("Approval Event Request - " + data_code + " ");
+                $("#modal_dialog_id").css({ 'width': '80%' });
+                $("#modal_header_id").css({ 'background-color': '#428bca', 'color': 'white' });
+                $("#modal_body_id").css({ 'padding-bottom': '0%' });
+                $("#modal_body_id").append(respon);
+                $("#exampleModal").modal("show");
+                $("#modal_footer_id").hide();
+            }
+        });
+    });
+</script>

@@ -1,0 +1,39 @@
+E:\PT.XSIS MITRA UTAMA\MARCOMAPPLICATION\Marcom_Application\Marcom_Application.Repo\bin\Debug\Marcom_Application.Repo.dll
+E:\PT.XSIS MITRA UTAMA\MARCOMAPPLICATION\Marcom_Application\Marcom_Application.Repo\bin\Debug\Marcom_Application.Repo.pdb
+E:\PT.XSIS MITRA UTAMA\MARCOMAPPLICATION\Marcom_Application\Marcom_Application.Repo\bin\Debug\EntityFramework.dll
+E:\PT.XSIS MITRA UTAMA\MARCOMAPPLICATION\Marcom_Application\Marcom_Application.Repo\bin\Debug\EntityFramework.SqlServer.dll
+E:\PT.XSIS MITRA UTAMA\MARCOMAPPLICATION\Marcom_Application\Marcom_Application.Repo\bin\Debug\Marcom_Application.Model.dll
+E:\PT.XSIS MITRA UTAMA\MARCOMAPPLICATION\Marcom_Application\Marcom_Application.Repo\bin\Debug\Marcom_Application.ViewModel.dll
+E:\PT.XSIS MITRA UTAMA\MARCOMAPPLICATION\Marcom_Application\Marcom_Application.Repo\bin\Debug\Marcom_Application.Model.pdb
+E:\PT.XSIS MITRA UTAMA\MARCOMAPPLICATION\Marcom_Application\Marcom_Application.Repo\bin\Debug\Marcom_Application.ViewModel.pdb
+E:\PT.XSIS MITRA UTAMA\MARCOMAPPLICATION\Marcom_Application\Marcom_Application.Repo\bin\Debug\EntityFramework.xml
+E:\PT.XSIS MITRA UTAMA\MARCOMAPPLICATION\Marcom_Application\Marcom_Application.Repo\bin\Debug\EntityFramework.SqlServer.xml
+E:\PT.XSIS MITRA UTAMA\MARCOMAPPLICATION\Marcom_Application\Marcom_Application.Repo\obj\Debug\Marcom_Application.Repo.csprojResolveAssemblyReference.cache
+E:\PT.XSIS MITRA UTAMA\MARCOMAPPLICATION\Marcom_Application\Marcom_Application.Repo\obj\Debug\Marcom_Application.Repo.dll
+E:\PT.XSIS MITRA UTAMA\MARCOMAPPLICATION\Marcom_Application\Marcom_Application.Repo\obj\Debug\Marcom_Application.Repo.pdb
+E:\MARCOMAPPLICATION\Marcom_Application\Marcom_Application.Repo\bin\Debug\Marcom_Application.Repo.dll
+E:\MARCOMAPPLICATION\Marcom_Application\Marcom_Application.Repo\bin\Debug\Marcom_Application.Repo.pdb
+E:\MARCOMAPPLICATION\Marcom_Application\Marcom_Application.Repo\bin\Debug\EntityFramework.dll
+E:\MARCOMAPPLICATION\Marcom_Application\Marcom_Application.Repo\bin\Debug\EntityFramework.SqlServer.dll
+E:\MARCOMAPPLICATION\Marcom_Application\Marcom_Application.Repo\bin\Debug\Marcom_Application.Model.dll
+E:\MARCOMAPPLICATION\Marcom_Application\Marcom_Application.Repo\bin\Debug\Marcom_Application.ViewModel.dll
+E:\MARCOMAPPLICATION\Marcom_Application\Marcom_Application.Repo\bin\Debug\Marcom_Application.Model.pdb
+E:\MARCOMAPPLICATION\Marcom_Application\Marcom_Application.Repo\bin\Debug\Marcom_Application.ViewModel.pdb
+E:\MARCOMAPPLICATION\Marcom_Application\Marcom_Application.Repo\bin\Debug\EntityFramework.xml
+E:\MARCOMAPPLICATION\Marcom_Application\Marcom_Application.Repo\bin\Debug\EntityFramework.SqlServer.xml
+E:\MARCOMAPPLICATION\Marcom_Application\Marcom_Application.Repo\obj\Debug\Marcom_Application.Repo.csprojResolveAssemblyReference.cache
+E:\MARCOMAPPLICATION\Marcom_Application\Marcom_Application.Repo\obj\Debug\Marcom_Application.Repo.dll
+E:\MARCOMAPPLICATION\Marcom_Application\Marcom_Application.Repo\obj\Debug\Marcom_Application.Repo.pdb
+E:\MARCOMUPDATE\MARCOMAPPLICATION\Marcom_Application\Marcom_Application.Repo\bin\Debug\Marcom_Application.Repo.dll
+E:\MARCOMUPDATE\MARCOMAPPLICATION\Marcom_Application\Marcom_Application.Repo\bin\Debug\Marcom_Application.Repo.pdb
+E:\MARCOMUPDATE\MARCOMAPPLICATION\Marcom_Application\Marcom_Application.Repo\bin\Debug\EntityFramework.dll
+E:\MARCOMUPDATE\MARCOMAPPLICATION\Marcom_Application\Marcom_Application.Repo\bin\Debug\EntityFramework.SqlServer.dll
+E:\MARCOMUPDATE\MARCOMAPPLICATION\Marcom_Application\Marcom_Application.Repo\bin\Debug\Marcom_Application.Model.dll
+E:\MARCOMUPDATE\MARCOMAPPLICATION\Marcom_Application\Marcom_Application.Repo\bin\Debug\Marcom_Application.ViewModel.dll
+E:\MARCOMUPDATE\MARCOMAPPLICATION\Marcom_Application\Marcom_Application.Repo\bin\Debug\Marcom_Application.Model.pdb
+E:\MARCOMUPDATE\MARCOMAPPLICATION\Marcom_Application\Marcom_Application.Repo\bin\Debug\Marcom_Application.ViewModel.pdb
+E:\MARCOMUPDATE\MARCOMAPPLICATION\Marcom_Application\Marcom_Application.Repo\bin\Debug\EntityFramework.xml
+E:\MARCOMUPDATE\MARCOMAPPLICATION\Marcom_Application\Marcom_Application.Repo\bin\Debug\EntityFramework.SqlServer.xml
+E:\MARCOMUPDATE\MARCOMAPPLICATION\Marcom_Application\Marcom_Application.Repo\obj\Debug\Marcom_Application.Repo.csprojResolveAssemblyReference.cache
+E:\MARCOMUPDATE\MARCOMAPPLICATION\Marcom_Application\Marcom_Application.Repo\obj\Debug\Marcom_Application.Repo.dll
+E:\MARCOMUPDATE\MARCOMAPPLICATION\Marcom_Application\Marcom_Application.Repo\obj\Debug\Marcom_Application.Repo.pdb

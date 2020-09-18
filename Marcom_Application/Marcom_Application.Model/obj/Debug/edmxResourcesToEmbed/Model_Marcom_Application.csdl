@@ -1,0 +1,141 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="db_marcomModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="master_company">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="address" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="phone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="is_delete" Type="Boolean" Nullable="false" />
+    <Property Name="created_by" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="created_date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="updated_by" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="updated_date" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="master_product">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="description" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="is_delete" Type="Boolean" Nullable="false" />
+    <Property Name="created_by" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="created_date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="updated_by" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="updated_date" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="master_souvenir">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="m_unit_id" Type="Int32" Nullable="false" />
+    <Property Name="is_delete" Type="Boolean" Nullable="false" />
+    <Property Name="created_by" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="created_date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="updated_by" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="updated_date" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="master_unit">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="description" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="is_delete" Type="Boolean" Nullable="false" />
+    <Property Name="created_by" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="created_date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="updated_by" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="updated_date" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityContainer Name="db_marcomEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="master_company" EntityType="Self.master_company" />
+    <EntitySet Name="master_product" EntityType="Self.master_product" />
+    <EntitySet Name="master_souvenir" EntityType="Self.master_souvenir" />
+    <EntitySet Name="master_unit" EntityType="Self.master_unit" />
+    <EntitySet Name="master_employee" EntityType="db_marcomModel.master_employee" />
+    <EntitySet Name="transaksi_event" EntityType="db_marcomModel.transaksi_event" />
+    <EntitySet Name="transaksi_souvenir" EntityType="db_marcomModel.transaksi_souvenir" />
+  </EntityContainer>
+  <EntityType Name="master_employee">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="employee_number" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="first_name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="last_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="m_company_id" Type="Int32" />
+    <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="is_delete" Type="Boolean" Nullable="false" />
+    <Property Name="created_by" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="created_date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="updated_by" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="updated_date" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="transaksi_event">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="code" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="event_name" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="start_date" Type="DateTime" Precision="3" />
+    <Property Name="end_date" Type="DateTime" Precision="3" />
+    <Property Name="place" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="budget" Type="Int64" />
+    <Property Name="request_by" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="request_date" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="approved_by" Type="Int32" />
+    <Property Name="approved_date" Type="DateTime" Precision="3" />
+    <Property Name="assign_to" Type="Int32" />
+    <Property Name="closed_date" Type="DateTime" Precision="3" />
+    <Property Name="note" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="status" Type="Int32" />
+    <Property Name="reject_reason" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="is_delete" Type="Boolean" />
+    <Property Name="created_by" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="created_date" Type="DateTime" Precision="3" />
+    <Property Name="updated_by" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="updated_date" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="transaksi_souvenir">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="code" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="type" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="t_event_id" Type="Int32" />
+    <Property Name="request_by" Type="Int32" Nullable="false" />
+    <Property Name="request_date" Type="DateTime" Precision="3" />
+    <Property Name="request_due_date" Type="DateTime" Precision="3" />
+    <Property Name="approved_by" Type="Int32" />
+    <Property Name="approved_date" Type="DateTime" Precision="3" />
+    <Property Name="received_by" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="received_date" Type="DateTime" Precision="3" />
+    <Property Name="settlement_by" Type="Int32" />
+    <Property Name="settlement_date" Type="DateTime" Precision="3" />
+    <Property Name="settlement_approved_by" Type="Int32" />
+    <Property Name="settlement_approved_date" Type="DateTime" Precision="3" />
+    <Property Name="status" Type="Int32" />
+    <Property Name="note" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="reject_reason" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="is_delete" Type="Boolean" />
+    <Property Name="created_by" Type="Int64" />
+    <Property Name="created_date" Type="DateTime" Precision="3" />
+    <Property Name="updated_by" Type="Int64" />
+    <Property Name="updated_date" Type="DateTime" Precision="3" />
+  </EntityType>
+</Schema>

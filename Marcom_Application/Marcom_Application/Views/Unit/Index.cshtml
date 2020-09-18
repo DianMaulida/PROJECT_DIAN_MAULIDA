@@ -1,0 +1,217 @@
+﻿@model PagedList.IPagedList<Marcom_Application.Model.master_unit>
+@using PagedList.Mvc;
+
+@{
+    ViewBag.Title = "Index";
+    int no = 1;
+}
+
+<br />
+<div class="row col-lg-12" style="width:93%">
+    <div class="alert alert-info cls_alert"></div>
+</div>
+<div class="panel panel-primary" style="width:90%">
+    <div class="panel-heading">List Master Unit</div>
+    <div class="panel-body">
+        <div class="col-md-12">
+            <ol class="breadcrumb">
+                <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                <li>@Html.ActionLink("Master", "Index", "Unit")</li>
+                <li class="active">List Unit</li>
+            </ol>
+            <button class="btn btn-primary cls_add" id="btn_add" style="margin-left:87%">Add</button>
+@using (Html.BeginForm("Index", "Unit", FormMethod.Get, new { @id = "form_create" }))
+{
+   <br />
+            <div class="row" style="margin-left:0%">
+                <div class="col-sm-3" style="padding-right:1px;padding-left:5px;">
+                   @Html.DropDownList("searchCode", (SelectList)ViewBag.UnitCode, "- Select Unit Code -", new { @class = "form-control" })
+                </div>
+                <div class="col-md-3" style="padding-right:1px;padding-left:5px;">
+                    @Html.DropDownList("searchName", (SelectList)ViewBag.UnitName, "- Select Unit Name -", new { @class = "form-control" })
+                </div>
+                <div class="col-md-2" style="padding-right:1px;padding-left:5px;">
+                    @Html.TextBox("searchDate", ViewBag.CurrentFilter1 as string, new { @class = "form-control", @style = "width:100%;", @placeholder = "Created Date", @type = "date" })
+                </div>
+                <div class="col-sm-2" style="padding-right:0px;padding-left:5px;">
+                    @Html.TextBox("searchCreatedUnit", ViewBag.CurrentFilter2 as string, new { @class = "form-control", @style = "width:100%;", @placeholder = "Created By" })
+                </div>
+                <div class="col-md-2" style="padding-left:5px">
+                    <input type="submit" class="btn btn-warning cls_search" id="search_unit" value="Search" />
+                </div> 
+            </div>
+}
+            <hr />
+            @if (Model != null)
+            {
+                <table class="table table-striped">
+                    <tbody>
+                        <tr>
+                            <th>No</th>
+                            <th>Unit Code</th>
+                            <th>Unit Name</th>
+                            <th>Created Date</th>
+                            <th>Created By</th>
+                            <th>Action</th>
+                        </tr>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@no</td>
+                                <td>@item.code</td>
+                                <td>@item.name</td>
+                                <td>@item.created_date.ToString("dd/MM/yyyy")</td>
+                                <td>@item.created_by</td>
+
+                                <td>
+                                    <span class="glyphicon glyphicon-search cls_view" id_unit="@item.id" data_name="@item.name" data_code ="@item.code"></span>
+                                    <span class="glyphicon glyphicon-pencil cls_edit" id_unit="@item.id" data_name="@item.name" data_code="@item.code"></span>
+                                    <span class="glyphicon glyphicon-trash cls_delete" id_unit="@item.id"></span>
+                                </td>
+                            </tr>
+                            no++;
+                        }
+                    </tbody>
+                </table>
+            }
+            else
+            {
+                <span class="alert-danger">Data tidak ditemukan!</span>
+            }
+            <div style="text-align: center; font-size: large; color: #007bff">@ViewBag.DataKosong</div>
+            <!--untuk pagination-->
+            @*<p style="float:right">
+                   Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+                </p>*@
+            <div class="row" style="float:right;padding-right:1em;">
+                @Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document" style="width:100%;padding-bottom:10%;" id="modal_dialog_id">
+        <div class="modal-content">
+            <div class="modal-header" id="modal_header_id">
+                <h5 class="modal-title" id="exampleModalLabel">  </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+
+            </div>
+            <div class="modal-body" id="modal_body_id"></div>
+            <div class="modal-footer" id="modal_footer_id" style="display:none;">
+                @*<div class="btn-group" aria-label="Basic example">*@
+                    <button type="button" id="id_btn_delete" class="btn btn-primary">Delete</button>
+                    <button type="button" class="btn  btn-warning" data-dismiss="modal">Cancel</button>
+                @*</div>*@
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    $(".cls_alert").hide();
+    $(".cls_add").click(function () {
+        debugger;
+        $.ajax({
+            url: "@Url.Action("Create","Unit")",
+            method: "get",
+            success: function (respon) {
+                debugger;
+                $("#modal_body_id").empty();
+                $("#exampleModalLabel").empty();
+                $("#exampleModalLabel").append("Add Unit");
+                $("#modal_dialog_id").css({ 'width': '40%' });
+                $("#modal_header_id").css({ 'background-color': '#428bca', 'color': 'white' });
+                $("#modal_body_id").css({ 'padding-bottom': '0%' });
+                $("#modal_body_id").append(respon);
+                $("#exampleModal").modal("show");
+                $("#modal_footer_id").hide();
+            }
+        })
+    });
+    $(".cls_edit").click(function () {
+        debugger;
+        var id = $(this).attr("id_unit");
+        var data_name = $(this).attr("data_name");
+        var data_code = $(this).attr("data_code");
+        $.ajax({
+            url: "@Url.Action("Edit","Unit")",
+            method: "get",
+            data: { id: id },
+            success: function (respon) {
+                $("#modal_body_id").empty();
+                $("#exampleModalLabel").empty();
+                $("#modal_dialog_id").css({ 'width': '40%' });
+                $("#modal_header_id").css({ 'background-color': '#428bca', 'color': 'white' });
+                $("#exampleModalLabel").append("Update Unit -  "+ data_name +" (" + data_code +")");
+                $("#modal_body_id").append(respon);
+                $("#exampleModal").modal("show");
+                $("#modal_footer_id").hide();
+            }
+
+        });
+    });
+
+    $(".cls_view").click(function () {
+        debugger;
+        var id = $(this).attr("id_unit");
+        var data_name = $(this).attr("data_name");
+        var data_code = $(this).attr("data_code");
+
+        $.ajax({
+            url: "@Url.Action("View","Unit")",
+            method: "get",
+            //dataType: "json",
+            data: { id: id },
+            success: function (respon) {
+                $("#modal_body_id").empty();
+                $("#exampleModalLabel").empty();
+                $("#modal_dialog_id").css({ 'width': '40%' });
+                $("#modal_header_id").css({ 'background-color': '#428bca', 'color': 'white' });
+                $("#exampleModalLabel").append("View Unit - " + data_name + " (" + data_code + ")");
+                $("#modal_body_id").append(respon);
+                $("#exampleModal").modal("show");
+                $("#modal_footer_id").hide();
+            }
+        });
+    });
+    $(".cls_delete").click(function () {
+        debugger;
+        var id = $(this).attr("id_unit");
+        $("#modal_body_id").empty();
+        $("#exampleModalLabel").empty();
+        $("#modal_body_id").empty();
+        $("#modal_dialog_id").css({ 'width': '16%' });
+        $("#modal_body_id").css({ 'padding-bottom': '0%', 'margin-left': '15%' });
+        $("#modal_footer_id").show();
+        $("#modal_header_id").hide();
+        $("#modal_body_id").append("Delete Data ?");
+        $("#exampleModal").modal("show");
+        $("#id_btn_delete").click(function () {
+            debugger;
+            $.ajax({
+                url: "@Url.Action("Delete", "Unit")",
+                method: "get",
+                data: { id: id },
+                success: function (respon) {
+                    debugger;
+                    if (respon.respon) {
+                        $("#exampleModal").modal("hide");
+                        $(".cls_alert").show().html("<strong>Data Deleted!</strong> Data Unit with code " + "<strong>" + respon.respon + "</strong>" + "has been deleted!");
+                        window.setTimeout(function () {
+                            $(".cls_alert").slideUp(500);
+                            window.location.reload();
+                        }, 3000);
+                    }
+                    else {
+                        alert(respon.respon);
+                    }
+                }
+            })
+        })
+    });
+</script>
+

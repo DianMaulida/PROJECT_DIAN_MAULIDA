@@ -1,0 +1,80 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Marcom Application</title>
+    @*@Styles.Render("~/Content/css")
+        @Scripts.Render("~/bundles/modernizr")*@
+   
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/Site.css" rel="stylesheet" />
+
+    <script src="~/Scripts/jquery-1.10.2.js"></script>
+    <script src="~/Scripts/bootstrap.js"></script>
+    <script src="~/Scripts/jquery.validate.js"></script>
+    <script src="~/Content/swal.js"></script>
+
+    <script src="~/Scripts/sweetalert.min.js"></script>
+    @*<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>*@
+    
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container" style="color:white">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Marcom Application", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">                   
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Master <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Master_Product", "Index", "Product")</li>
+                            <li>@Html.ActionLink("Master_Unit", "Index", "Unit")</li>
+                            <li>@Html.ActionLink("Master_Souvenir", "Index", "Souvenir")</li> 
+                            <li class="disabled">@Html.ActionLink("Master_Employee", "Index", "Employee")</li>
+                            <li class="disabled">@Html.ActionLink("Master_Company", "Index", "Company")</li>
+                            <li class="disabled">@Html.ActionLink("Master_Role", "Index", "Role")</li>
+                            <li class="disabled">@Html.ActionLink("Master_User", "Index", "User")</li>
+                            <li class="disabled">@Html.ActionLink("Master_Menu", "Index", "Menu")</li>
+                            <li class="disabled">@Html.ActionLink("Master_Menu_Access", "Index", "Menu_Access")</li>
+                                             
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Transaksi <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Transaksi_Event", "Index", "T_Event")</li>
+                            <li>@Html.ActionLink("Transaksi_Souvenir", "Index", "T_Souvenir")</li>
+                            <li class="disabled">@Html.ActionLink("Transaksi_Souvenir_Item", "Index", "T_Souvenir_Item")</li>
+                            <li class="disabled">@Html.ActionLink("Transaksi_Design", "Index", "T_Design")</li>
+                            <li class="disabled">@Html.ActionLink("Transaksi_Design_Item", "Index", "T_Design_Item")</li>
+                            <li class="disabled">@Html.ActionLink("Transaksi_Design_Item_Film", "Index", "T_Design_Item_Film")</li>
+                            <li class="disabled">@Html.ActionLink("Transaksi_Promotion", "Index", "T_Promotion")</li>
+                            <li class="disabled">@Html.ActionLink("Transaksi_Promotion_Item", "Index", "T_Promotion_Item")</li>
+                            <li class="disabled">@Html.ActionLink("Transaksi_Promotion_Item_File", "Index", "T_Promotion_Item_File")</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - Marcom Application By Dian Maulida</p>
+        </footer>
+    </div>
+
+    @*@Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)*@
+</body>
+</html>

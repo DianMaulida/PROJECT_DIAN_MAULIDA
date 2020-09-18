@@ -1,0 +1,128 @@
+﻿@model Marcom_Application.ViewModel.VMEvent
+@{
+    ViewBag.Title = "View";
+    Layout = null;
+}
+
+@using (Html.BeginForm("View", "T_Event", FormMethod.Post, new { id = "form_create" }))
+{
+    @Html.HiddenFor(a => a.idevent)
+    <form>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="col-lg-2">
+                    <label>* Transaction Code</label>
+                </div>
+                <div class="col-lg-4">
+                    <input type="text" class="form-control" value="@Model.codeevent" disabled />
+                </div>
+                <div class="col-lg-2">
+                    <label>* Request By</label>
+                </div>
+                <div class="col-lg-4">
+                    <input type="text" class="form-control" value="@Model.request_by" disabled />
+                </div>
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="col-lg-2">
+                    <label>* Event Name</label>
+                </div>
+                <div class="col-lg-4">
+                    <input type="text" class="form-control" id="event_name" name="event_name" value="@Model.event_name" disabled />
+                </div>
+                <div class="col-lg-2">
+                    <label>* Request Date</label>
+                </div>
+                <div class="col-lg-4">
+                    <input type="text" class="form-control" value="@Model.request_date.ToString("dd-MM-yyyy")" disabled />
+                </div>
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="col-lg-2">
+                    <label>* Event Place</label>
+                </div>
+                <div class="col-lg-4">
+                    <input type="text" class="form-control" id="place" name="place" value="@Model.place" disabled />
+                </div>
+            </div>
+            <div class="col-lg-2">
+                <label>Note</label>
+            </div>
+            <div class="col-lg-4">
+                <textarea class="form-control" id="note" name="note" value="@Model.note" disabled>@Model.note</textarea>
+            </div>
+        </div>
+        <br />
+
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="col-lg-2">
+                    <label>* Event Start Date</label>
+                </div>
+                <div class="col-lg-4">
+                    <input onfocus="this.type='date'" class="form-control" id="start_date" name="start_date" value="@Model.start_date.Value.ToString("dd-MM-yyyy")" disabled />
+                </div>
+                <div class="col-lg-2">
+                    <label>Status</label>
+                </div>
+                <div class="col-lg-4">
+                    @if (@Model.status == 1)
+                    {
+                        <input type="text" class="form-control" placeholder="Submitted" disabled />
+                    }
+                    else if (@Model.status == 2)
+                    {
+                        <input type="text" class="form-control" placeholder="In Progress" disabled />
+                    }
+                    else if (@Model.status == 3)
+                    {
+                        <input type="text" class="form-control" placeholder="Done" disabled />
+                    }
+                    else
+                    {
+                        <input type="text" class="form-control" placeholder="Rejected" disabled />
+                    }
+                    @*<input type="text" class="form-control" value="@Model.status" disabled/>*@
+                </div>
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="col-lg-2">
+                    <label>* Event End Date</label>
+                </div>
+                <div class="col-lg-4">
+                    <input onfocus="this.type='date'" class="form-control" id="end_date" name="end_date" value="@Model.end_date.Value.ToString("dd-MM-yyyy")" disabled />
+                </div>
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="col-lg-2">
+                    <label>* Budget(Rp.)</label>
+                </div>
+                <div class="col-lg-4">
+                    <input type="text" class="form-control" id="budget" name="budget" value="@Model.budget" disabled />
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-warning cls_cancel" data-dissmiss="modal fade">Cancel</button>
+        </div>
+    </form>
+}
+<script>
+    $(".cls_cancel").click(function () {
+        $("#exampleModal").modal("hide");
+        window.location.reload();
+    });
+</script>
+

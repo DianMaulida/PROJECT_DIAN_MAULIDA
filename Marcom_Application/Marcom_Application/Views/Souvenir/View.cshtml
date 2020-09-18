@@ -1,0 +1,73 @@
+﻿@model Marcom_Application.ViewModel.VMSouvenir
+@{
+    ViewBag.Title = "Edit";
+    Layout = null;
+}
+
+<style type="text/css">
+    .labelfrm {
+        display: block;
+        font-size: small;
+        margin-top: 5px;
+    }
+
+    .error {
+        font-size: small;
+        color: red;
+        border-color: red;
+    }
+</style>
+
+@using (Html.BeginForm("GetDataById", "Souvenir", FormMethod.Post, new { id = "form_create" }))
+{
+    @Html.HiddenFor(a => a.id)
+    <form>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="col-lg-2">
+                    <label>* Souvenir Code</label>
+                </div>
+                <div class="col-lg-4">
+                    <input type="text" class="form-control" id="code" name="code" value="@Model.codesouvenir" disabled/>
+                </div>
+                <div class="col-lg-2">
+                    <label>* Unit Name</label>
+                </div>
+                <div class="col-lg-4">
+                    @Html.DropDownList("m_unit_id", new SelectList(ViewBag.ListJenisUnit, "id", "name"), "-Select Unit Name- ( * )", new { @class = "form-control labelfrm", disabled = true })
+                </div>
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="col-lg-2">
+                    <label>* Souvenir Name</label>
+                </div>
+                <div class="col-lg-4">
+                    <input type="text" class="form-control" id="name" name="name" placeholder="Type Souvenir Name" value="@Model.namesouvenir" disabled />
+                </div>
+                <div class="col-lg-2">
+                    <label>* Description</label>
+                </div>
+                <div class="col-lg-4">
+                    <input type="text" class="form-control" id="description" name="description" placeholder="Type Description" value="@Model.description" disabled/>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <div class="btn-group" role="group">
+                <button type="button" class="btn btn-warning cls_cancel" data-dissmiss="modal fade">Close</button>
+            </div>
+        </div>
+    </form>
+}
+<script>
+    //$("#m_unit_id").prop("disabled", true);
+    $(".cls_cancel").click(function () {
+        $("#exampleModal").modal("hide");
+        window.location.reload();
+    });
+</script>
+
+

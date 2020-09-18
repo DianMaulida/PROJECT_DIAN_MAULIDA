@@ -1,0 +1,29 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Marcom_Application.Model;
+using Marcom_Application.ViewModel;
+
+
+namespace Marcom_Application.Repo
+{
+    public class EventRepo
+    {
+        public static List<master_company> GetDataJenisCompany()
+        {
+            List<master_company> data = new List<master_company>();
+            using (db_marcomEntities1 db = new db_marcomEntities1())
+            {
+                data = db.master_company.Where(a => a.is_delete == false).ToList();
+            }
+            return data;
+        }
+        public static List<VMEvent> GetAllDataEvent()
+        {
+            List<VMEvent> dataAll = new List<VMEvent>();
+            using (db_marcomEntities1 db = new db_marcomEntities1())
+            {
+                dataAll = (from ev in db.t_event
+                           join em in db.master_employe

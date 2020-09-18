@@ -1,0 +1,117 @@
+﻿@{
+    ViewBag.Title = "Create";
+    Layout = null;
+}
+<style type="text/css">
+    .labelfrm {
+        display: block;
+        font-size: small;
+        margin-top: 5px;
+    }
+
+    .error {
+        font-size: small;
+        color: red;
+        border-color: red;
+    }
+</style>
+@using (Html.BeginForm("Create", "Unit", FormMethod.Post, new { id = "unit_create" }))
+{
+    <form>
+
+        <div class="row">
+            <br />
+            <div class="col-lg-4">
+                <label for="code">* Unit Code</label>
+            </div>
+            <div class="col-lg-8">
+                <input type="text" class="form-control" placeholder="Auto Generated" disabled />
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-lg-4">
+                <label for="name" class="labelfrm">* Unit Name</label>
+            </div>
+            <div class="col-lg-8">
+                <input type="text" class="form-control" id="name" name="name" placeholder="Type Unit Name" required />
+                <span style="display:none"></span>
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-lg-4">
+                <label for="description">Description</label>
+            </div>
+            <div class="col-lg-8">
+                <input type="text" class="form-control" id="description" name="description" placeholder="Type Description" />
+            </div>
+        </div>
+        <div class="modal-footer">
+            <div class="btn-group" role="group">
+                <button type="submit" class="btn btn-primary cls_save" data-dissmiss="modal fade">Save</button>
+                <button type="button" class="btn btn-warning cls_cancel" data-dissmiss="modal fade">Cancel</button>
+            </div>
+        </div>      
+    </form>
+}
+<script>
+    $("#unit_create").validate({
+        rules: {
+            name: {
+                required: true
+            }
+        },
+        messages: {
+            name: {
+                required: "Name Tidak Boleh Kosong"
+            },
+        },
+        submitHandler: function (form) {
+            var dataForm = $(form).serialize();
+            $.ajax({
+                url: "@Url.Action("Create", "Unit")",
+                method: "post",
+                data: dataForm,
+                dataType: "json",
+                success: function (respon) {
+                    if (respon.respon) {
+                        $("#exampleModal").modal("hide");
+                        $(".cls_alert").show().html("<strong>Data Saved!</strong> New Unit has been add with code " + "<strong>" + respon.respon + "</strong>"+ "!");
+                        window.setTimeout(function () {
+                            $(".cls_alert").slideUp(500);
+                            //$("#exampleModal").modal("hide");
+                            window.location.reload();
+                        }, 3000);
+                    }
+                    else {
+                        alert(respon.respon);
+                    }
+                }
+            });
+        }
+    });
+    $("#name").change(function () {
+        var name = $(this).val();
+        $.ajax({
+            url: '@Url.Action("CheckName", "Unit")',
+            dataType: "json",
+            data: { name: name },
+            success: function (data) {
+                debugger;
+                if (data == "ada") {
+                    $("#exampleModal").modal("hide");
+                    $(".cls_alert").show().html("<strong>Unit Name Tidak Boleh Sama!</strong>");
+                    window.setTimeout(function () {
+                        $(".cls_alert").slideUp(500);
+                        window.location.reload();
+                    }, 2000);
+                }
+            }
+        });
+    });
+    $(".cls_cancel").click(function () {
+        window.location.reload();
+        $("#exampleModal").modal("hide");
+    });
+</script>

@@ -1,0 +1,141 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="db_marcomModelStoreContainer" CdmEntityContainer="db_marcomEntities">
+    <EntitySetMapping Name="master_company">
+      <EntityTypeMapping TypeName="db_marcomModel.master_company">
+        <MappingFragment StoreEntitySet="master_company">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="code" ColumnName="code" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="is_delete" ColumnName="is_delete" />
+          <ScalarProperty Name="created_by" ColumnName="created_by" />
+          <ScalarProperty Name="created_date" ColumnName="created_date" />
+          <ScalarProperty Name="updated_by" ColumnName="updated_by" />
+          <ScalarProperty Name="updated_date" ColumnName="updated_date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="master_product">
+      <EntityTypeMapping TypeName="db_marcomModel.master_product">
+        <MappingFragment StoreEntitySet="master_product">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="code" ColumnName="code" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="is_delete" ColumnName="is_delete" />
+          <ScalarProperty Name="created_by" ColumnName="created_by" />
+          <ScalarProperty Name="created_date" ColumnName="created_date" />
+          <ScalarProperty Name="updated_by" ColumnName="updated_by" />
+          <ScalarProperty Name="updated_date" ColumnName="updated_date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="master_souvenir">
+      <EntityTypeMapping TypeName="db_marcomModel.master_souvenir">
+        <MappingFragment StoreEntitySet="master_souvenir">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="code" ColumnName="code" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="m_unit_id" ColumnName="m_unit_id" />
+          <ScalarProperty Name="is_delete" ColumnName="is_delete" />
+          <ScalarProperty Name="created_by" ColumnName="created_by" />
+          <ScalarProperty Name="created_date" ColumnName="created_date" />
+          <ScalarProperty Name="updated_by" ColumnName="updated_by" />
+          <ScalarProperty Name="updated_date" ColumnName="updated_date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="master_unit">
+      <EntityTypeMapping TypeName="db_marcomModel.master_unit">
+        <MappingFragment StoreEntitySet="master_unit">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="code" ColumnName="code" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="is_delete" ColumnName="is_delete" />
+          <ScalarProperty Name="created_by" ColumnName="created_by" />
+          <ScalarProperty Name="created_date" ColumnName="created_date" />
+          <ScalarProperty Name="updated_by" ColumnName="updated_by" />
+          <ScalarProperty Name="updated_date" ColumnName="updated_date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="master_employee">
+      <EntityTypeMapping TypeName="db_marcomModel.master_employee">
+        <MappingFragment StoreEntitySet="master_employee">
+          <ScalarProperty Name="updated_date" ColumnName="updated_date" />
+          <ScalarProperty Name="updated_by" ColumnName="updated_by" />
+          <ScalarProperty Name="created_date" ColumnName="created_date" />
+          <ScalarProperty Name="created_by" ColumnName="created_by" />
+          <ScalarProperty Name="is_delete" ColumnName="is_delete" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="m_company_id" ColumnName="m_company_id" />
+          <ScalarProperty Name="last_name" ColumnName="last_name" />
+          <ScalarProperty Name="first_name" ColumnName="first_name" />
+          <ScalarProperty Name="employee_number" ColumnName="employee_number" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="transaksi_event">
+      <EntityTypeMapping TypeName="db_marcomModel.transaksi_event">
+        <MappingFragment StoreEntitySet="transaksi_event">
+          <ScalarProperty Name="updated_date" ColumnName="updated_date" />
+          <ScalarProperty Name="updated_by" ColumnName="updated_by" />
+          <ScalarProperty Name="created_date" ColumnName="created_date" />
+          <ScalarProperty Name="created_by" ColumnName="created_by" />
+          <ScalarProperty Name="is_delete" ColumnName="is_delete" />
+          <ScalarProperty Name="reject_reason" ColumnName="reject_reason" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="note" ColumnName="note" />
+          <ScalarProperty Name="closed_date" ColumnName="closed_date" />
+          <ScalarProperty Name="assign_to" ColumnName="assign_to" />
+          <ScalarProperty Name="approved_date" ColumnName="approved_date" />
+          <ScalarProperty Name="approved_by" ColumnName="approved_by" />
+          <ScalarProperty Name="request_date" ColumnName="request_date" />
+          <ScalarProperty Name="request_by" ColumnName="request_by" />
+          <ScalarProperty Name="budget" ColumnName="budget" />
+          <ScalarProperty Name="place" ColumnName="place" />
+          <ScalarProperty Name="end_date" ColumnName="end_date" />
+          <ScalarProperty Name="start_date" ColumnName="start_date" />
+          <ScalarProperty Name="event_name" ColumnName="event_name" />
+          <ScalarProperty Name="code" ColumnName="code" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="transaksi_souvenir">
+      <EntityTypeMapping TypeName="db_marcomModel.transaksi_souvenir">
+        <MappingFragment StoreEntitySet="transaksi_souvenir">
+          <ScalarProperty Name="updated_date" ColumnName="updated_date" />
+          <ScalarProperty Name="updated_by" ColumnName="updated_by" />
+          <ScalarProperty Name="created_date" ColumnName="created_date" />
+          <ScalarProperty Name="created_by" ColumnName="created_by" />
+          <ScalarProperty Name="is_delete" ColumnName="is_delete" />
+          <ScalarProperty Name="reject_reason" ColumnName="reject_reason" />
+          <ScalarProperty Name="note" ColumnName="note" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="settlement_approved_date" ColumnName="settlement_approved_date" />
+          <ScalarProperty Name="settlement_approved_by" ColumnName="settlement_approved_by" />
+          <ScalarProperty Name="settlement_date" ColumnName="settlement_date" />
+          <ScalarProperty Name="settlement_by" ColumnName="settlement_by" />
+          <ScalarProperty Name="received_date" ColumnName="received_date" />
+          <ScalarProperty Name="received_by" ColumnName="received_by" />
+          <ScalarProperty Name="approved_date" ColumnName="approved_date" />
+          <ScalarProperty Name="approved_by" ColumnName="approved_by" />
+          <ScalarProperty Name="request_due_date" ColumnName="request_due_date" />
+          <ScalarProperty Name="request_date" ColumnName="request_date" />
+          <ScalarProperty Name="request_by" ColumnName="request_by" />
+          <ScalarProperty Name="t_event_id" ColumnName="t_event_id" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="code" ColumnName="code" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

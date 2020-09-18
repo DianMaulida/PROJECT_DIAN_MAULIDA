@@ -1,0 +1,95 @@
+﻿@model Marcom_Application.Model.master_unit
+@{
+    ViewBag.Title = "Edit";
+    Layout = null;
+}
+<style type="text/css">
+    .labelfrm {
+        display: block;
+        font-size: small;
+        margin-top: 5px;
+    }
+
+    .error {
+        font-size: small;
+        color: red;
+        border-color: red;
+    }
+</style>
+@using (Html.BeginForm("UpdateData", "Unit", FormMethod.Post, new { id = "edit_unit" }))
+{
+    @Html.HiddenFor(a => a.id)
+    <form>
+        <div class="row">
+            <br />
+            <div class="col-lg-4">
+                <label for="code">* Unit Code</label>
+            </div>
+            <div class="col-lg-8">
+                <input type="text" class="form-control" value="@Model.code" disabled />
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-lg-4">
+                <label for="name" class="labelfrm">* Unit Name</label>
+            </div>
+            <div class="col-lg-8">
+                <input type="text" class="form-control" id="name" name="name" placeholder="Type Unit Name" required value="@Model.name" />
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-lg-4">
+                <label for="description">Description</label>
+            </div>
+            <div class="col-lg-8">
+                <input type="text" class="form-control" id="description" name="description" placeholder="Type Description" value="@Model.description" />
+            </div>
+        </div>
+        <div class="modal-footer">
+                <button type="submit" class="btn btn-primary cls_save" data-dissmiss="modal fade">Update</button>
+                <button type="button" class="btn btn-warning cls_cancel" data-dissmiss="modal fade">Cancel</button>
+        </div>
+    </form>
+}
+<script>
+    $("#edit_unit").validate({
+        rules: {
+            name: {
+                required: true
+            }
+        },
+        messages: {
+            name: {
+                required: "Nama tidak boleh kosong"
+            },
+        },
+        submitHandler: function (form) {
+            var dataForm = $(form).serialize();
+            $.ajax({
+                url: "@Url.Action("UpdateData", "Unit")",
+                method: "post",
+                data: dataForm,
+                dataType: "json",
+                success: function (respon) {
+                    if (respon.respon) {
+                        $("#exampleModal").modal("hide");
+                        $(".cls_alert").show().html("<strong>Data Updated!</strong> Data Unit has been Updated !");
+                        window.setTimeout(function () {
+                            $(".cls_alert").slideUp(500);
+                            window.location.reload();
+                        }, 3000);
+                    }
+                    else {
+                        alert(respon.reload);
+                    }
+                }
+            });
+        }
+    });
+    $(".cls_cancel").click(function () {
+        $("#exampleModal").modal("hide");
+    });
+</script>
+

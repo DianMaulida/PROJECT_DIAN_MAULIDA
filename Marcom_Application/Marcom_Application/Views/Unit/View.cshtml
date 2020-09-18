@@ -1,0 +1,49 @@
+﻿@model Marcom_Application.Model.master_unit 
+@{
+    ViewBag.Title = "View";
+    Layout = null;
+}
+
+@using (Html.BeginForm("View", "Unit", FormMethod.Post, new { id = "form_create" }))
+{
+    @Html.HiddenFor( a => a.id)
+    <form>
+        <div class="row">
+            <div class="col-lg-4">
+                <label for="code">* Role Code</label>
+            </div>
+            <div class="col-lg-8">
+                <input type="text" class="form-control" id="code" name="code" value="@Model.code"disabled />
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-lg-4">
+                <label for="name" class="labelfrm">* Role Name</label>
+            </div>
+            <div class="col-lg-8">
+                <input type="text" class="form-control" id="name" name="name" placeholder="Type Unit Name" required value="@Model.name" disabled />
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-lg-4">
+                <label for="description">  Description</label>
+            </div>
+            <div class="col-lg-8">
+                <input type="text" class="form-control" id="description" name="description" placeholder="Type Description" value="@Model.description" disabled/>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <div class="btn-group" role="group">
+                <button type="button" class="btn btn-warning cls_cancel" data-dissmiss="modal fade">Cancel</button>
+            </div>
+        </div>
+    </form>
+}
+<script>
+    $(".cls_cancel").click(function () {
+        $("#exampleModal").modal("hide");
+        window.location.reload();
+    });
+</script>

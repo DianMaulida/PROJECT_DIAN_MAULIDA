@@ -1,0 +1,177 @@
+﻿@{
+    ViewBag.Title = "Create";
+    Layout = null;
+}
+
+<style type="text/css">
+    .labelfrm {
+        display: block;
+        font-size: small;
+        margin-top: 5px;
+    }
+
+    .error {
+        font-size: small;
+        color: red;
+        border-color: red;
+    }
+</style>
+@using (Html.BeginForm("Create", "T_Event", FormMethod.Post, new { id = "create_event" }))
+{
+    <form>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="col-lg-2">
+                    <label>* Transaction Code</label>
+                </div>
+                <div class="col-lg-4">
+                    <input type="text" class="form-control" placeholder="Auto Generated" disabled />
+                </div>
+                <div class="col-lg-2">
+                    <label>* Request By</label>
+                </div>
+                <div class="col-lg-4">
+                    <input type="text" class="form-control" disabled />
+                </div>
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="col-lg-2">
+                    <label>* Event Name</label>
+                </div>
+                <div class="col-lg-4">
+                    <input type="text" class="form-control" id="event_name" name="event_name" placeholder="Type Event Name" />
+                </div>
+                <div class="col-lg-2">
+                    <label>* Request Date</label>
+                </div>
+                <div class="col-lg-4">
+                    <input type="text" class="form-control" disabled />
+                </div>
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="col-lg-2">
+                    <label>* Event Place</label>
+                </div>
+                <div class="col-lg-4">
+                    <input type="text" class="form-control" id="place" name="place" placeholder="Type Event Place" />
+                </div>
+            </div>
+            <div class="col-lg-2">
+                <label>Note</label>
+            </div>
+            <div class="col-lg-4">
+                <textarea class="form-control" id="note" name="note" placeholder="Type Note"></textarea>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="col-lg-2">
+                    <label>* Event Start Date</label>
+                </div>
+                <div class="col-lg-4">
+                    <input onfocus="this.type='date'" class="form-control" id="start_date" name="start_date" placeholder="Select Date" />
+                </div>
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="col-lg-2">
+                    <label>* Event End Date</label>
+                </div>
+                <div class="col-lg-4">
+                    <input onfocus="this.type='date'" class="form-control" id="end_date" name="end_date" placeholder="Select Date" />
+                </div>
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="col-lg-2">
+                    <label>* Budget(Rp.)</label>
+                </div>
+                <div class="col-lg-4">
+                    <input type="text" class="form-control" id="budget" name="budget" placeholder="Type Event Budget" />
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+                <button type="submit" class="btn btn-primary cls_save" data-dissmiss="modal fade">Save</button>
+                <button type="button" class="btn btn-warning cls_cancel" data-dissmiss="modal fade">Cancel</button>
+        </div>
+    </form>
+}
+<script>
+    $(".cls_alertsave").hide();
+    $("#create_event").validate({
+        rules: {
+            event_name: {
+                required: true
+            },
+            place: {
+                required: true
+            },
+            start_date: {
+                required: true
+            },
+            end_date: {
+                required: true
+            },
+            budget: {
+                required: true,
+                number: true
+            },
+        },
+        messages: {
+            event_name: {
+                required: "Event Name tidak boleh kosong"
+            },
+            place: {
+                required: "Event Place tidak boleh kosong"
+            },
+            start_date: {
+                required: "Event Start Date tidak boleh kosong"
+            },
+            end_date: {
+                required: "Event End Date tidak boleh kosong"
+            },
+            budget: {
+                required: "Budget tidak boleh kosong",
+                number: "Hanya Angka"
+            },
+        },
+        submitHandler: function (form) {
+            var dataForm = $(form).serialize();
+            $.ajax({
+                url: "@Url.Action("CreateData", "T_Event")",
+                method: "post",
+                data: dataForm,
+                dataType: "json",
+                success: function (respon) {
+                    if (respon.respon) {
+                        if (respon.respon) {
+                            $("#exampleModal").modal("hide");
+                            $(".cls_alert").show().html("<strong>Data Saved!</strong> New Transaction Event has been add with code " + "<strong>" + respon.respon + "</strong>" + " !");
+                            window.setTimeout(function () {
+                                $(".cls_alert").slideUp(500);
+                                window.location.reload();
+                            }, 3000);
+                        }
+                        else {
+                            alert(respon.respon);
+                        }
+                    }
+                }
+            });
+        }
+    });
+    $(".cls_cancel").click(function () {
+        $("#exampleModal").modal("hide");
+    });
+</script>

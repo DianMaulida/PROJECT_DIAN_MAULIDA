@@ -1,0 +1,129 @@
+﻿@{
+    ViewBag.Title = "Create";
+    Layout = null;
+}
+<style type="text/css">
+    .labelfrm {
+        display: block;
+        font-size: small;
+        margin-top: 5px;
+    }
+
+    .error {
+        font-size: small;
+        color: red;
+        border-color: red;
+    }
+</style>
+
+@using (Html.BeginForm("Create", "Souvenir", FormMethod.Post, new { id = "create_souvenir" }))
+{
+    <form>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="col-lg-2">
+                    <label>* Souvenir Code</label>
+                </div>
+                <div class="col-lg-4">
+                    <input type="text" class="form-control" placeholder="Auto Generated" disabled />
+                </div>
+                <div class="col-lg-2">
+                    <label>* Unit Name</label>
+                </div>
+                <div class="col-lg-4">
+                    @Html.DropDownList("m_unit_id", new SelectList(ViewBag.ListJenisUnit, "id", "name"), "-Select Unit Name- ( * )", new { @class = "form-control labelfrm" })
+                </div>
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="col-lg-2">
+                    <label>* Souvenir Name</label>
+                </div>
+                <div class="col-lg-4">
+                    <input type="text" class="form-control" id="name" name="name" placeholder="Type Souvenir Name" />
+                </div>
+                <div class="col-lg-2">
+                    <label>* Description</label>
+                </div>
+                <div class="col-lg-4">
+                    <input type="text" class="form-control" id="description" name="description" placeholder="Type Description" />
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <div class="btn-group" role="group">
+                <button type="submit" class="btn btn-primary cls_save" data-dissmiss="modal fade">Save</button>
+                <button type="button" class="btn btn-warning cls_cancel" data-dissmiss="modal fade">Cancel</button>
+            </div>
+        </div>
+    </form>
+}
+<script>
+    $(".cls_alertsave").hide();
+    $("#create_souvenir").validate({
+        rules: {
+            name: {
+                required: true
+            },
+            m_unit_id: {
+                required: true
+            },
+        },
+        messages: {
+            name: {
+                required: "Souvenir Name tidak boleh kosong"
+            },
+            m_unit_id: {
+                required: "Unit Name tidak boleh kosong"
+            },
+        },
+        submitHandler: function (form) {
+            var dataForm = $(form).serialize();
+            $.ajax({
+                url: "@Url.Action("CreateData", "Souvenir")",
+                method: "post",
+                data: dataForm,
+                dataType: "json",
+                success: function (respon) {
+                    if (respon.respon) {
+                        if (respon.respon) {
+                            $("#exampleModal").modal("hide");
+                            $(".cls_alert").show().html("<strong>Data Saved!</strong> New Souvenir has been add with code " + "<strong>" + respon.respon + "</strong>" + " !");
+                            window.setTimeout(function () {
+                                $(".cls_alert").slideUp(500);
+                                window.location.reload();
+                            }, 3000);
+                        }
+                        else {
+                            alert(respon.respon);
+                        }
+                    }
+                }
+            });
+        }
+    });
+    $("#name").change(function () {
+        var name = $(this).val();
+        $.ajax({
+            url: '@Url.Action("CheckName", "Souvenir")',
+            dataType: "json",
+            data: { name: name },
+            success: function (data) {
+                debugger;
+                if (data == "ada") {
+                    $("#exampleModal").modal("hide");
+                    $(".cls_alert").show().html("<strong>Souvenir Name Tidak Boleh Sama!</strong>");
+                    window.setTimeout(function () {
+                        $(".cls_alert").slideUp(500);
+                        window.location.reload();
+                    }, 1000);
+                }
+            }
+        });
+    });
+    $(".cls_cancel").click(function () {
+        $("#exampleModal").modal("hide");
+    });
+</script>

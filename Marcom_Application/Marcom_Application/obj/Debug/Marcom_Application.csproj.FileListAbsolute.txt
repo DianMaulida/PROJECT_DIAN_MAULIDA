@@ -1,0 +1,154 @@
+E:\PT.XSIS MITRA UTAMA\MARCOMAPPLICATION\Marcom_Application\Marcom_Application\bin\roslyn\csc.exe
+E:\PT.XSIS MITRA UTAMA\MARCOMAPPLICATION\Marcom_Application\Marcom_Application\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+E:\PT.XSIS MITRA UTAMA\MARCOMAPPLICATION\Marcom_Application\Marcom_Application\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+E:\PT.XSIS MITRA UTAMA\MARCOMAPPLICATION\Marcom_Application\Marcom_Application\bin\roslyn\Microsoft.CodeAnalysis.dll
+E:\PT.XSIS MITRA UTAMA\MARCOMAPPLICATION\Marcom_Application\Marcom_Application\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+E:\PT.XSIS MITRA UTAMA\MARCOMAPPLICATION\Marcom_Application\Marcom_Application\bin\roslyn\Microsoft.CSharp.Core.targets
+E:\PT.XSIS MITRA UTAMA\MARCOMAPPLICATION\Marcom_Application\Marcom_Application\bin\roslyn\Microsoft.VisualBasic.Core.targets
+E:\PT.XSIS MITRA UTAMA\MARCOMAPPLICATION\Marcom_Application\Marcom_Application\bin\roslyn\System.Collections.Immutable.dll
+E:\PT.XSIS MITRA UTAMA\MARCOMAPPLICATION\Marcom_Application\Marcom_Application\bin\roslyn\System.Reflection.Metadata.dll
+E:\PT.XSIS MITRA UTAMA\MARCOMAPPLICATION\Marcom_Application\Marcom_Application\bin\roslyn\vbc.exe
+E:\PT.XSIS MITRA UTAMA\MARCOMAPPLICATION\Marcom_Application\Marcom_Application\bin\roslyn\VBCSCompiler.exe
+E:\PT.XSIS MITRA UTAMA\MARCOMAPPLICATION\Marcom_Application\Marcom_Application\bin\roslyn\VBCSCompiler.exe.config
+E:\PT.XSIS MITRA UTAMA\MARCOMAPPLICATION\Marcom_Application\Marcom_Application\bin\Marcom_Application.dll.config
+E:\PT.XSIS MITRA UTAMA\MARCOMAPPLICATION\Marcom_Application\Marcom_Application\bin\Marcom_Application.dll
+E:\PT.XSIS MITRA UTAMA\MARCOMAPPLICATION\Marcom_Application\Marcom_Application\bin\Marcom_Application.pdb
+E:\PT.XSIS MITRA UTAMA\MARCOMAPPLICATION\Marcom_Application\Marcom_Application\bin\Antlr3.Runtime.dll
+E:\PT.XSIS MITRA UTAMA\MARCOMAPPLICATION\Marcom_Application\Marcom_Application\bin\EntityFramework.dll
+E:\PT.XSIS MITRA UTAMA\MARCOMAPPLICATION\Marcom_Application\Marcom_Application\bin\EntityFramework.SqlServer.dll
+E:\PT.XSIS MITRA UTAMA\MARCOMAPPLICATION\Marcom_Application\Marcom_Application\bin\Marcom_Application.Model.dll
+E:\PT.XSIS MITRA UTAMA\MARCOMAPPLICATION\Marcom_Application\Marcom_Application\bin\Marcom_Application.Repo.dll
+E:\PT.XSIS MITRA UTAMA\MARCOMAPPLICATION\Marcom_Application\Marcom_Application\bin\Marcom_Application.ViewModel.dll
+E:\PT.XSIS MITRA UTAMA\MARCOMAPPLICATION\Marcom_Application\Marcom_Application\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+E:\PT.XSIS MITRA UTAMA\MARCOMAPPLICATION\Marcom_Application\Marcom_Application\bin\Microsoft.Web.Infrastructure.dll
+E:\PT.XSIS MITRA UTAMA\MARCOMAPPLICATION\Marcom_Application\Marcom_Application\bin\Newtonsoft.Json.dll
+E:\PT.XSIS MITRA UTAMA\MARCOMAPPLICATION\Marcom_Application\Marcom_Application\bin\System.Web.Helpers.dll
+E:\PT.XSIS MITRA UTAMA\MARCOMAPPLICATION\Marcom_Application\Marcom_Application\bin\System.Web.Mvc.dll
+E:\PT.XSIS MITRA UTAMA\MARCOMAPPLICATION\Marcom_Application\Marcom_Application\bin\System.Web.Optimization.dll
+E:\PT.XSIS MITRA UTAMA\MARCOMAPPLICATION\Marcom_Application\Marcom_Application\bin\System.Web.Razor.dll
+E:\PT.XSIS MITRA UTAMA\MARCOMAPPLICATION\Marcom_Application\Marcom_Application\bin\System.Web.WebPages.Deployment.dll
+E:\PT.XSIS MITRA UTAMA\MARCOMAPPLICATION\Marcom_Application\Marcom_Application\bin\System.Web.WebPages.dll
+E:\PT.XSIS MITRA UTAMA\MARCOMAPPLICATION\Marcom_Application\Marcom_Application\bin\System.Web.WebPages.Razor.dll
+E:\PT.XSIS MITRA UTAMA\MARCOMAPPLICATION\Marcom_Application\Marcom_Application\bin\WebGrease.dll
+E:\PT.XSIS MITRA UTAMA\MARCOMAPPLICATION\Marcom_Application\Marcom_Application\bin\Marcom_Application.Model.pdb
+E:\PT.XSIS MITRA UTAMA\MARCOMAPPLICATION\Marcom_Application\Marcom_Application\bin\Marcom_Application.Repo.pdb
+E:\PT.XSIS MITRA UTAMA\MARCOMAPPLICATION\Marcom_Application\Marcom_Application\bin\Marcom_Application.ViewModel.pdb
+E:\PT.XSIS MITRA UTAMA\MARCOMAPPLICATION\Marcom_Application\Marcom_Application\bin\EntityFramework.xml
+E:\PT.XSIS MITRA UTAMA\MARCOMAPPLICATION\Marcom_Application\Marcom_Application\bin\EntityFramework.SqlServer.xml
+E:\PT.XSIS MITRA UTAMA\MARCOMAPPLICATION\Marcom_Application\Marcom_Application\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+E:\PT.XSIS MITRA UTAMA\MARCOMAPPLICATION\Marcom_Application\Marcom_Application\bin\System.Web.Helpers.xml
+E:\PT.XSIS MITRA UTAMA\MARCOMAPPLICATION\Marcom_Application\Marcom_Application\bin\System.Web.Mvc.xml
+E:\PT.XSIS MITRA UTAMA\MARCOMAPPLICATION\Marcom_Application\Marcom_Application\bin\System.Web.Optimization.xml
+E:\PT.XSIS MITRA UTAMA\MARCOMAPPLICATION\Marcom_Application\Marcom_Application\bin\System.Web.Razor.xml
+E:\PT.XSIS MITRA UTAMA\MARCOMAPPLICATION\Marcom_Application\Marcom_Application\bin\System.Web.WebPages.xml
+E:\PT.XSIS MITRA UTAMA\MARCOMAPPLICATION\Marcom_Application\Marcom_Application\bin\System.Web.WebPages.Deployment.xml
+E:\PT.XSIS MITRA UTAMA\MARCOMAPPLICATION\Marcom_Application\Marcom_Application\bin\System.Web.WebPages.Razor.xml
+E:\PT.XSIS MITRA UTAMA\MARCOMAPPLICATION\Marcom_Application\Marcom_Application\bin\Antlr3.Runtime.pdb
+E:\PT.XSIS MITRA UTAMA\MARCOMAPPLICATION\Marcom_Application\Marcom_Application\bin\Newtonsoft.Json.xml
+E:\PT.XSIS MITRA UTAMA\MARCOMAPPLICATION\Marcom_Application\Marcom_Application\obj\Debug\Marcom_Application.csprojResolveAssemblyReference.cache
+E:\PT.XSIS MITRA UTAMA\MARCOMAPPLICATION\Marcom_Application\Marcom_Application\obj\Debug\Marcom_Application.dll
+E:\PT.XSIS MITRA UTAMA\MARCOMAPPLICATION\Marcom_Application\Marcom_Application\obj\Debug\Marcom_Application.pdb
+E:\MARCOMAPPLICATION\Marcom_Application\Marcom_Application\bin\roslyn\csc.exe
+E:\MARCOMAPPLICATION\Marcom_Application\Marcom_Application\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+E:\MARCOMAPPLICATION\Marcom_Application\Marcom_Application\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+E:\MARCOMAPPLICATION\Marcom_Application\Marcom_Application\bin\roslyn\Microsoft.CodeAnalysis.dll
+E:\MARCOMAPPLICATION\Marcom_Application\Marcom_Application\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+E:\MARCOMAPPLICATION\Marcom_Application\Marcom_Application\bin\roslyn\Microsoft.CSharp.Core.targets
+E:\MARCOMAPPLICATION\Marcom_Application\Marcom_Application\bin\roslyn\Microsoft.VisualBasic.Core.targets
+E:\MARCOMAPPLICATION\Marcom_Application\Marcom_Application\bin\roslyn\System.Collections.Immutable.dll
+E:\MARCOMAPPLICATION\Marcom_Application\Marcom_Application\bin\roslyn\System.Reflection.Metadata.dll
+E:\MARCOMAPPLICATION\Marcom_Application\Marcom_Application\bin\roslyn\vbc.exe
+E:\MARCOMAPPLICATION\Marcom_Application\Marcom_Application\bin\roslyn\VBCSCompiler.exe
+E:\MARCOMAPPLICATION\Marcom_Application\Marcom_Application\bin\roslyn\VBCSCompiler.exe.config
+E:\MARCOMAPPLICATION\Marcom_Application\Marcom_Application\bin\Marcom_Application.dll.config
+E:\MARCOMAPPLICATION\Marcom_Application\Marcom_Application\bin\Marcom_Application.dll
+E:\MARCOMAPPLICATION\Marcom_Application\Marcom_Application\bin\Marcom_Application.pdb
+E:\MARCOMAPPLICATION\Marcom_Application\Marcom_Application\bin\Antlr3.Runtime.dll
+E:\MARCOMAPPLICATION\Marcom_Application\Marcom_Application\bin\EntityFramework.dll
+E:\MARCOMAPPLICATION\Marcom_Application\Marcom_Application\bin\EntityFramework.SqlServer.dll
+E:\MARCOMAPPLICATION\Marcom_Application\Marcom_Application\bin\Marcom_Application.Model.dll
+E:\MARCOMAPPLICATION\Marcom_Application\Marcom_Application\bin\Marcom_Application.Repo.dll
+E:\MARCOMAPPLICATION\Marcom_Application\Marcom_Application\bin\Marcom_Application.ViewModel.dll
+E:\MARCOMAPPLICATION\Marcom_Application\Marcom_Application\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+E:\MARCOMAPPLICATION\Marcom_Application\Marcom_Application\bin\Microsoft.Web.Infrastructure.dll
+E:\MARCOMAPPLICATION\Marcom_Application\Marcom_Application\bin\Newtonsoft.Json.dll
+E:\MARCOMAPPLICATION\Marcom_Application\Marcom_Application\bin\System.Web.Helpers.dll
+E:\MARCOMAPPLICATION\Marcom_Application\Marcom_Application\bin\System.Web.Mvc.dll
+E:\MARCOMAPPLICATION\Marcom_Application\Marcom_Application\bin\System.Web.Optimization.dll
+E:\MARCOMAPPLICATION\Marcom_Application\Marcom_Application\bin\System.Web.Razor.dll
+E:\MARCOMAPPLICATION\Marcom_Application\Marcom_Application\bin\System.Web.WebPages.Deployment.dll
+E:\MARCOMAPPLICATION\Marcom_Application\Marcom_Application\bin\System.Web.WebPages.dll
+E:\MARCOMAPPLICATION\Marcom_Application\Marcom_Application\bin\System.Web.WebPages.Razor.dll
+E:\MARCOMAPPLICATION\Marcom_Application\Marcom_Application\bin\WebGrease.dll
+E:\MARCOMAPPLICATION\Marcom_Application\Marcom_Application\bin\Marcom_Application.Model.pdb
+E:\MARCOMAPPLICATION\Marcom_Application\Marcom_Application\bin\Marcom_Application.Repo.pdb
+E:\MARCOMAPPLICATION\Marcom_Application\Marcom_Application\bin\Marcom_Application.ViewModel.pdb
+E:\MARCOMAPPLICATION\Marcom_Application\Marcom_Application\bin\EntityFramework.xml
+E:\MARCOMAPPLICATION\Marcom_Application\Marcom_Application\bin\EntityFramework.SqlServer.xml
+E:\MARCOMAPPLICATION\Marcom_Application\Marcom_Application\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+E:\MARCOMAPPLICATION\Marcom_Application\Marcom_Application\bin\System.Web.Helpers.xml
+E:\MARCOMAPPLICATION\Marcom_Application\Marcom_Application\bin\System.Web.Mvc.xml
+E:\MARCOMAPPLICATION\Marcom_Application\Marcom_Application\bin\System.Web.Optimization.xml
+E:\MARCOMAPPLICATION\Marcom_Application\Marcom_Application\bin\System.Web.Razor.xml
+E:\MARCOMAPPLICATION\Marcom_Application\Marcom_Application\bin\System.Web.WebPages.xml
+E:\MARCOMAPPLICATION\Marcom_Application\Marcom_Application\bin\System.Web.WebPages.Deployment.xml
+E:\MARCOMAPPLICATION\Marcom_Application\Marcom_Application\bin\System.Web.WebPages.Razor.xml
+E:\MARCOMAPPLICATION\Marcom_Application\Marcom_Application\bin\Antlr3.Runtime.pdb
+E:\MARCOMAPPLICATION\Marcom_Application\Marcom_Application\bin\Newtonsoft.Json.xml
+E:\MARCOMAPPLICATION\Marcom_Application\Marcom_Application\obj\Debug\Marcom_Application.csprojResolveAssemblyReference.cache
+E:\MARCOMAPPLICATION\Marcom_Application\Marcom_Application\obj\Debug\Marcom_Application.dll
+E:\MARCOMAPPLICATION\Marcom_Application\Marcom_Application\obj\Debug\Marcom_Application.pdb
+E:\MARCOMUPDATE\MARCOMAPPLICATION\Marcom_Application\Marcom_Application\bin\roslyn\csc.exe
+E:\MARCOMUPDATE\MARCOMAPPLICATION\Marcom_Application\Marcom_Application\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+E:\MARCOMUPDATE\MARCOMAPPLICATION\Marcom_Application\Marcom_Application\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+E:\MARCOMUPDATE\MARCOMAPPLICATION\Marcom_Application\Marcom_Application\bin\roslyn\Microsoft.CodeAnalysis.dll
+E:\MARCOMUPDATE\MARCOMAPPLICATION\Marcom_Application\Marcom_Application\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+E:\MARCOMUPDATE\MARCOMAPPLICATION\Marcom_Application\Marcom_Application\bin\roslyn\Microsoft.CSharp.Core.targets
+E:\MARCOMUPDATE\MARCOMAPPLICATION\Marcom_Application\Marcom_Application\bin\roslyn\Microsoft.VisualBasic.Core.targets
+E:\MARCOMUPDATE\MARCOMAPPLICATION\Marcom_Application\Marcom_Application\bin\roslyn\System.Collections.Immutable.dll
+E:\MARCOMUPDATE\MARCOMAPPLICATION\Marcom_Application\Marcom_Application\bin\roslyn\System.Reflection.Metadata.dll
+E:\MARCOMUPDATE\MARCOMAPPLICATION\Marcom_Application\Marcom_Application\bin\roslyn\vbc.exe
+E:\MARCOMUPDATE\MARCOMAPPLICATION\Marcom_Application\Marcom_Application\bin\roslyn\VBCSCompiler.exe
+E:\MARCOMUPDATE\MARCOMAPPLICATION\Marcom_Application\Marcom_Application\bin\roslyn\VBCSCompiler.exe.config
+E:\MARCOMUPDATE\MARCOMAPPLICATION\Marcom_Application\Marcom_Application\bin\Marcom_Application.dll.config
+E:\MARCOMUPDATE\MARCOMAPPLICATION\Marcom_Application\Marcom_Application\bin\Marcom_Application.dll
+E:\MARCOMUPDATE\MARCOMAPPLICATION\Marcom_Application\Marcom_Application\bin\Marcom_Application.pdb
+E:\MARCOMUPDATE\MARCOMAPPLICATION\Marcom_Application\Marcom_Application\bin\Antlr3.Runtime.dll
+E:\MARCOMUPDATE\MARCOMAPPLICATION\Marcom_Application\Marcom_Application\bin\EntityFramework.dll
+E:\MARCOMUPDATE\MARCOMAPPLICATION\Marcom_Application\Marcom_Application\bin\EntityFramework.SqlServer.dll
+E:\MARCOMUPDATE\MARCOMAPPLICATION\Marcom_Application\Marcom_Application\bin\Marcom_Application.Model.dll
+E:\MARCOMUPDATE\MARCOMAPPLICATION\Marcom_Application\Marcom_Application\bin\Marcom_Application.Repo.dll
+E:\MARCOMUPDATE\MARCOMAPPLICATION\Marcom_Application\Marcom_Application\bin\Marcom_Application.ViewModel.dll
+E:\MARCOMUPDATE\MARCOMAPPLICATION\Marcom_Application\Marcom_Application\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+E:\MARCOMUPDATE\MARCOMAPPLICATION\Marcom_Application\Marcom_Application\bin\Microsoft.Web.Infrastructure.dll
+E:\MARCOMUPDATE\MARCOMAPPLICATION\Marcom_Application\Marcom_Application\bin\Newtonsoft.Json.dll
+E:\MARCOMUPDATE\MARCOMAPPLICATION\Marcom_Application\Marcom_Application\bin\PagedList.dll
+E:\MARCOMUPDATE\MARCOMAPPLICATION\Marcom_Application\Marcom_Application\bin\PagedList.Mvc.dll
+E:\MARCOMUPDATE\MARCOMAPPLICATION\Marcom_Application\Marcom_Application\bin\System.Web.Helpers.dll
+E:\MARCOMUPDATE\MARCOMAPPLICATION\Marcom_Application\Marcom_Application\bin\System.Web.Mvc.dll
+E:\MARCOMUPDATE\MARCOMAPPLICATION\Marcom_Application\Marcom_Application\bin\System.Web.Optimization.dll
+E:\MARCOMUPDATE\MARCOMAPPLICATION\Marcom_Application\Marcom_Application\bin\System.Web.Razor.dll
+E:\MARCOMUPDATE\MARCOMAPPLICATION\Marcom_Application\Marcom_Application\bin\System.Web.WebPages.Deployment.dll
+E:\MARCOMUPDATE\MARCOMAPPLICATION\Marcom_Application\Marcom_Application\bin\System.Web.WebPages.dll
+E:\MARCOMUPDATE\MARCOMAPPLICATION\Marcom_Application\Marcom_Application\bin\System.Web.WebPages.Razor.dll
+E:\MARCOMUPDATE\MARCOMAPPLICATION\Marcom_Application\Marcom_Application\bin\WebGrease.dll
+E:\MARCOMUPDATE\MARCOMAPPLICATION\Marcom_Application\Marcom_Application\bin\Marcom_Application.Model.pdb
+E:\MARCOMUPDATE\MARCOMAPPLICATION\Marcom_Application\Marcom_Application\bin\Marcom_Application.Repo.pdb
+E:\MARCOMUPDATE\MARCOMAPPLICATION\Marcom_Application\Marcom_Application\bin\Marcom_Application.ViewModel.pdb
+E:\MARCOMUPDATE\MARCOMAPPLICATION\Marcom_Application\Marcom_Application\bin\EntityFramework.xml
+E:\MARCOMUPDATE\MARCOMAPPLICATION\Marcom_Application\Marcom_Application\bin\EntityFramework.SqlServer.xml
+E:\MARCOMUPDATE\MARCOMAPPLICATION\Marcom_Application\Marcom_Application\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+E:\MARCOMUPDATE\MARCOMAPPLICATION\Marcom_Application\Marcom_Application\bin\PagedList.xml
+E:\MARCOMUPDATE\MARCOMAPPLICATION\Marcom_Application\Marcom_Application\bin\PagedList.Mvc.xml
+E:\MARCOMUPDATE\MARCOMAPPLICATION\Marcom_Application\Marcom_Application\bin\System.Web.Helpers.xml
+E:\MARCOMUPDATE\MARCOMAPPLICATION\Marcom_Application\Marcom_Application\bin\System.Web.Mvc.xml
+E:\MARCOMUPDATE\MARCOMAPPLICATION\Marcom_Application\Marcom_Application\bin\System.Web.Optimization.xml
+E:\MARCOMUPDATE\MARCOMAPPLICATION\Marcom_Application\Marcom_Application\bin\System.Web.Razor.xml
+E:\MARCOMUPDATE\MARCOMAPPLICATION\Marcom_Application\Marcom_Application\bin\System.Web.WebPages.xml
+E:\MARCOMUPDATE\MARCOMAPPLICATION\Marcom_Application\Marcom_Application\bin\System.Web.WebPages.Deployment.xml
+E:\MARCOMUPDATE\MARCOMAPPLICATION\Marcom_Application\Marcom_Application\bin\System.Web.WebPages.Razor.xml
+E:\MARCOMUPDATE\MARCOMAPPLICATION\Marcom_Application\Marcom_Application\bin\Antlr3.Runtime.pdb
+E:\MARCOMUPDATE\MARCOMAPPLICATION\Marcom_Application\Marcom_Application\bin\Newtonsoft.Json.xml
+E:\MARCOMUPDATE\MARCOMAPPLICATION\Marcom_Application\Marcom_Application\obj\Debug\Marcom_Application.csprojResolveAssemblyReference.cache
+E:\MARCOMUPDATE\MARCOMAPPLICATION\Marcom_Application\Marcom_Application\obj\Debug\Marcom_Application.dll
+E:\MARCOMUPDATE\MARCOMAPPLICATION\Marcom_Application\Marcom_Application\obj\Debug\Marcom_Application.pdb
